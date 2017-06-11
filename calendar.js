@@ -16,14 +16,28 @@ while(current < end) {
         top: 25,
         fill: 'black',
         width: 1,
-        height: 300
+        height: 300,
+        lockMovementX: true,
+        lockMovementY: true,
+        lockScalingX: true,
+        lockScalingY: true,
+        lockUniScaling: true,
+        lockRotation: true,
+        selectable: false
     }));
     canvas.add(new fabric.Text(current.format('D MMM YYYY'), {
         fontFamily: 'Helvetica',
         fontSize: 20,
         textAlign: 'center',
         left: diff - 50,
-        top: 0
+        top: 0,
+        lockMovementX: true,
+        lockMovementY: true,
+        lockScalingX: true,
+        lockScalingY: true,
+        lockUniScaling: true,
+        lockRotation: true,
+        selectable: false
     }));
 }
 
@@ -41,7 +55,14 @@ for(var i = 0; i < window.versions.length; i++) {
         fontSize: 20,
         textAlign: 'left',
         left: 0,
-        top: y
+        top: y,
+        lockMovementX: true,
+        lockMovementY: true,
+        lockScalingX: true,
+        lockScalingY: true,
+        lockUniScaling: true,
+        lockRotation: true,
+        selectable: false
     }));
 
     // Make the timeline
@@ -63,7 +84,14 @@ for(var i = 0; i < window.versions.length; i++) {
         width: (rectEnd.diff(rectStart, 'days') / 2),
         fill: '#27ae60',
         top: y,
-        height: 20
+        height: 20,
+        lockMovementX: true,
+        lockMovementY: true,
+        lockScalingX: true,
+        lockScalingY: true,
+        lockUniScaling: true,
+        lockRotation: true,
+        selectable: false
     }));
 
     // Security Support
@@ -84,7 +112,14 @@ for(var i = 0; i < window.versions.length; i++) {
         width: (rectEnd.diff(rectStart, 'days') / 2),
         fill: '#e67e22',
         top: y,
-        height: 20
+        height: 20,
+        lockMovementX: true,
+        lockMovementY: true,
+        lockScalingX: true,
+        lockScalingY: true,
+        lockUniScaling: true,
+        lockRotation: true,
+        selectable: false
     }));
 }
 
@@ -94,5 +129,12 @@ canvas.add(new fabric.Rect({
     top: 25,
     fill: '#c0392b',
     width: 1,
-    height: 300
+    height: 300,
+    lockMovementX: true,
+    lockMovementY: true,
+    lockScalingX: true,
+    lockScalingY: true,
+    lockUniScaling: true,
+    lockRotation: true,
+    selectable: false
 }));

@@ -1,5 +1,5 @@
 Vue.component('current-table-row', {
-    props: ['version', 'releaseDate', 'isLTS'],
+    props: ['version', 'releaseDate', 'isLTS', 'php'],
     template: '#current-table-row-template',
 
     computed: {

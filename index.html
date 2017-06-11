@@ -27,6 +27,7 @@
             <td>{{ releaseDate !== null ? activeSupportUntil.fromNow() : '?' }}</td>
             <td>{{ releaseDate !== null ? securitySupportUntil.format('D MMM YYYY') : '?' }}</td>
             <td>{{ releaseDate !== null ? securitySupportUntil.fromNow() : '?' }}</td>
+            <td>{{ php }}</td>
         </tr>
     </script>
 </head>
@@ -51,6 +52,7 @@
                 <th colspan="2">Initial Release</th>
                 <th colspan="2">Active Support Until</th>
                 <th colspan="2">Security Support Until</th>
+                <th>Min PHP</th>
             </tr>
             </thead>
             <tbody>
@@ -59,6 +61,7 @@
                         :version="version.version"
                         :release-date="version.releaseDate"
                         :is-l-t-s="version.isLTS"
+                        :php="version.php"
                         :key="version.version"></trcurrent-table-row>
             </tbody>
         </table>
@@ -74,41 +77,49 @@
         {
             version: '4.2',
             releaseDate: moment('2014-06-01'),
-            isLTS: false
+            isLTS: false,
+            php: '5.4.0'
         },
         {
             version: '5.0',
             releaseDate: moment('2015-02-04'),
-            isLTS: false
+            isLTS: false,
+            php: '5.4'
         },
         {
             version: '5.1',
             releaseDate: moment('2015-06-09'),
-            isLTS: true
+            isLTS: true,
+            php: '5.5.9'
         },
         {
             version: '5.2',
             releaseDate: moment('2015-12-21'),
-            isLTS: false
+            isLTS: false,
+            php: '5.5.9'
         },
         {
             version: '5.3',
             releaseDate: moment('2016-08-23'),
-            isLTS: false
+            isLTS: false,
+            php: '5.6.4'
         },
         {
             version: '5.4',
             releaseDate: moment('2017-01-24'),
-            isLTS: false
+            isLTS: false,
+            php: '5.6.4'
         },
         {
             version: '5.5',
             releaseDate: null,
-            isLTS: true
+            isLTS: true,
+            php: '7.0.0'
         }
     ];
 </script>
-<script src="https://unpkg.com/vue@2.3.4/dist/vue.min.js"></script>
+<!--<script src="https://unpkg.com/vue@2.3.4/dist/vue.min.js"></script>-->
+<script src="https://unpkg.com/vue@2.3.4/dist/vue.js"></script>
 <script src="components/CurrentTableRow.js"></script>
 <script src="script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.12/fabric.min.js"></script>
