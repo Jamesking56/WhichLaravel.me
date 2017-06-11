@@ -1,0 +1,19 @@
+td.is-primary {
+    color: white;
+    background-color: #27ae60;
+}
+
+td.is-warning {
+    color: white;
+    background-color: #e67e22;
+}
+
+td.is-danger {
+    color: white;
+    background-color: #c0392b;
+}
+
+td.is-info {
+    color: white;
+    background-color: #2980b9;
+}

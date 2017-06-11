@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Laravel Support Tables</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/x-template" id="current-table-row-template">
+        <tr>
+            <td v-bind:class="{
+                'is-primary': (hasActiveSupport && hasSecuritySupport),
+                'is-warning': (!hasActiveSupport && hasSecuritySupport),
+                'is-danger': (!hasActiveSupport && !hasSecuritySupport),
+                'is-info': isUnreleased
+            }">
+                {{ version }}
+                <span class="tag is-black" v-if="isLTS">LTS</span>
+            </td>
+            <td>{{ releaseDate !== null ? releaseDate.format('D MMM YYYY') : '?' }}</td>
+            <td>{{ releaseDate !== null ? releaseDate.fromNow() : '?' }}</td>
+            <td>{{ releaseDate !== null ? activeSupportUntil.format('D MMM YYYY') : '?' }}</td>
+            <td>{{ releaseDate !== null ? activeSupportUntil.fromNow() : '?' }}</td>
+            <td>{{ releaseDate !== null ? securitySupportUntil.format('D MMM YYYY') : '?' }}</td>
+            <td>{{ releaseDate !== null ? securitySupportUntil.fromNow() : '?' }}</td>
+        </tr>
+    </script>
+</head>
+<body>
+
+<div class="container" style="margin-top: 1em;margin-bottom: 1em;">
+    <div class="content">
+        <h1>Laravel Supported Versions</h1>
+        <p>
+            This website shows all of the currently supported versions of Laravel and is constantly updated.
+            If the version you are using is in red, upgrade immediately!
+            Orange means you only have security-related updates so plan your upgrade.
+            Green means you have full support. Blue means this version is scheduled for release soon.
+            This website is meant only as a guide.
+        </p>
+
+        <h3>Currently Supported Versions</h3>
+        <table id="current-support" class="table is-bordered">
+            <thead>
+            <tr>
+                <th>Branch</th>
+                <th colspan="2">Initial Release</th>
+                <th colspan="2">Active Support Until</th>
+                <th colspan="2">Security Support Until</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr is="current-table-row"
+                        v-for="version in versions"
+                        :version="version.version"
+                        :release-date="version.releaseDate"
+                        :is-l-t-s="version.isLTS"
+                        :key="version.version"></trcurrent-table-row>
+            </tbody>
+        </table>
+
+        <h3>Calendar</h3>
+        <canvas id="calendar" height="300" width="1350"></canvas>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script>
+    var versions = [
+        {
+            version: '4.2',
+            releaseDate: moment('2014-06-01'),
+            isLTS: false
+        },
+        {
+            version: '5.0',
+            releaseDate: moment('2015-02-04'),
+            isLTS: false
+        },
+        {
+            version: '5.1',
+            releaseDate: moment('2015-06-09'),
+            isLTS: true
+        },
+        {
+            version: '5.2',
+            releaseDate: moment('2015-12-21'),
+            isLTS: false
+        },
+        {
+            version: '5.3',
+            releaseDate: moment('2016-08-23'),
+            isLTS: false
+        },
+        {
+            version: '5.4',
+            releaseDate: moment('2017-01-24'),
+            isLTS: false
+        },
+        {
+            version: '5.5',
+            releaseDate: null,
+            isLTS: true
+        }
+    ];
+</script>
+<script src="https://unpkg.com/vue@2.3.4"></script>
+<script src="components/CurrentTableRow.js"></script>
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.12/fabric.min.js"></script>
+<script src="calendar.js"></script>
+</body>
+</html>
