@@ -1,19 +1,26 @@
-td.is-primary {
+.is-primary {
     color: white;
     background-color: #27ae60;
 }
 
-td.is-warning {
+.is-warning {
     color: white;
     background-color: #e67e22;
 }
 
-td.is-danger {
+.is-danger {
     color: white;
     background-color: #c0392b;
 }
 
-td.is-info {
+.is-info {
     color: white;
     background-color: #2980b9;
+}
+
+.key-circle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
 }
