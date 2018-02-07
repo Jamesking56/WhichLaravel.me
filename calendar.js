@@ -16,7 +16,7 @@ while(current < end) {
         top: 25,
         fill: 'black',
         width: 1,
-        height: 300
+        height: canvas.height
     }));
     canvas.add(new fabric.Text(current.format('D MMM YYYY'), {
         fontFamily: 'Helvetica',
@@ -90,9 +90,9 @@ for(var i = 0; i < window.versions.length; i++) {
 
 // Mark Today
 canvas.add(new fabric.Rect({
-    left: (now.diff(start, 'days') / 2) + 90,
+    left: (now.diff(start, 'days') / 2) + 90 - 1,
     top: 25,
     fill: '#c0392b',
-    width: 1,
-    height: 300
+    width: 2,
+    height: canvas.height
 }));
