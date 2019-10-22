@@ -1,0 +1,41 @@
+{
+  "name": "@jamesking56/whichlaravel",
+  "private": true,
+  "description": "Up to date Laravel Version Support Tables, showing you which Laravel versions are supported and when their support runs out. Inspired by PHP's support tables.",
+  "scripts": {
+    "dev": "npm run development",
+    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "npm run development -- --watch",
+    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "prod": "npm run production",
+    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jamesking56/WhichLaravel.me.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "James King",
+    "email": "james@jamesking56.uk",
+    "url": "https://jamesking56.uk"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jamesking56/WhichLaravel.me/issues"
+  },
+  "homepage": "https://github.com/Jamesking56/WhichLaravel.me#readme",
+  "devDependencies": {
+    "bulma": "^0.4.2",
+    "cross-env": "^6.0.3",
+    "fabric": "^1.7.12",
+    "font-awesome": "^4.7.0",
+    "laravel-mix": "^5.0.0",
+    "moment": "^2.18.1",
+    "resolve-url-loader": "^3.1.0",
+    "sass": "^1.23.0",
+    "sass-loader": "^8.0.0",
+    "vue": "^2.3.4",
+    "vue-template-compiler": "^2.6.10"
+  }
+}

@@ -1,12 +1,13 @@
-var canvas = new fabric.StaticCanvas('calendar'),
+const fabric = require('fabric').fabric;
+import moment from 'moment';
+
+const canvas = new fabric.StaticCanvas('calendar'),
     now = moment(),
     start = now.clone().subtract(3, 'years'),
-    end = now.clone().add(3, 'years'),
-    distance = end.diff(start, 'days'),
-    current = start.clone(),
-    diff;
+    end = now.clone().add(3, 'years');
 
 // Timeline Markers
+let diff, current = start.clone();
 while(current < end) {
     current = current.add(1, 'year').startOf('year');
     diff = (current.diff(start, 'days') / 2) + 90;
@@ -28,8 +29,9 @@ while(current < end) {
 }
 
 // Loop through each version, marking their timelines
-var y = -10, rectStart, rectEnd;
-for(var i = 0; i < window.versions.length; i++) {
+let y = -10, rectStart, rectEnd;
+console.log(window.versions);
+for(let i = 0; i < window.versions.length; i++) {
     if (window.versions[i].releaseDate == null) {
         continue;
     }
