@@ -2,7 +2,6 @@ var canvas = new fabric.StaticCanvas('calendar'),
     now = moment(),
     start = now.clone().subtract(3, 'years'),
     end = now.clone().add(3, 'years'),
-    distance = end.diff(start, 'days'),
     current = start.clone(),
     diff;
 
