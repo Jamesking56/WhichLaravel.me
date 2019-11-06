@@ -1,0 +1,5 @@
+version: 1
+static_snapshots:
+    path: .
+agent:
+    network-idle-timeout: 50 #ms
