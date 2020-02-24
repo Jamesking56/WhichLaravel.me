@@ -8,7 +8,7 @@ var canvas = new fabric.StaticCanvas('calendar'),
 
 // Loop through each version, marking their timelines
 var y = -10;
-for (i = 0; i < window.versions.length; i++) {
+for (var i = 0; i < window.versions.length; i++) {
     if (window.versions[i].releaseDate == null) {
         continue;
     }
