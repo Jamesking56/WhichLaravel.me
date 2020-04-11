@@ -1,6 +1,6 @@
 # [WhichLaravel.me](https://whichlaravel.me)
 [![Website](https://img.shields.io/website-up-down-green-red/https/whichlaravel.me.svg?label=website)](https://whichlaravel.me)
-[![Maintenance](https://img.shields.io/maintenance/yes/2019.svg)]()
+[![Maintenance](https://img.shields.io/maintenance/yes/2020.svg)]()
 [![GitHub last commit](https://img.shields.io/github/last-commit/jamesking56/whichlaravel.me.svg)]()
 [![GitHub issues](https://img.shields.io/github/issues/jamesking56/whichlaravel.me.svg)](https://github.com/Jamesking56/WhichLaravel.me/issues)
 [![GitHub pull requests](https://img.shields.io/github/issues-pr/jamesking56/whichlaravel.me.svg)](https://github.com/Jamesking56/WhichLaravel.me/pulls)
